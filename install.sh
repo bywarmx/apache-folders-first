@@ -11,7 +11,7 @@ echo ""
 TARGET_DIR="/var/www/html"
 
 # Preguntar al usuario si desea cambiar la ruta por defecto
-read -p "Introduce la ruta de tu carpeta html [$TARGET_DIR]: " user_dir
+read -p "Introduce la ruta de tu carpeta html [$TARGET_DIR]: " user_dir < /dev/tty
 if [ ! -z "$user_dir" ]; then
     TARGET_DIR="$user_dir"
 fi
@@ -33,7 +33,7 @@ echo "¡Archivo .htaccess copiado con éxito en $TARGET_DIR!"
 
 # Habilitar AllowOverride All en la configuración de Apache
 echo ""
-read -p "¿Deseas habilitar AllowOverride All en la configuración de Apache? (requiere sudo) [s/N]: " confirm_apache
+read -p "¿Deseas habilitar AllowOverride All en la configuración de Apache? (requiere sudo) [s/N]: " confirm_apache < /dev/tty
 if [[ "$confirm_apache" =~ ^[sS]$ ]]; then
     APACHE_CONF="/etc/apache2/apache2.conf"
     if [ -f "$APACHE_CONF" ]; then
