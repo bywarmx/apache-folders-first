@@ -1,0 +1,4 @@
+# Configuración de Indexado de Apache (mod_autoindex)
+# Ordenar carpetas primero y alfabéticamente por nombre
+IndexOptions +FancyIndexing +FoldersFirst +IgnoreCase +HTMLTable +NameWidth=*
+IndexOrderDefault Ascending Name
