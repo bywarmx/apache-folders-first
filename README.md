@@ -8,31 +8,40 @@ Este repositorio contiene la configuración de `.htaccess` para ordenar las carp
 - **Nombres Completos**: Evita que los nombres de los archivos largos se recorten con puntos suspensivos (`NameWidth=*`).
 - **Tabla HTML**: Muestra el indexado usando una estructura de tabla limpia.
 
-## Uso
+---
 
-1. Descarga o copia el contenido del archivo `.htaccess` en la raíz de tu carpeta web (por ejemplo, `/var/www/html/`).
-2. Si Apache no reconoce el archivo `.htaccess` (por defecto viene desactivado), debes habilitar la directiva `AllowOverride`.
+## Instalación rápida (Vía Terminal/Git)
 
-### Cómo habilitar AllowOverride en Apache (Ubuntu/Debian)
+Puedes ejecutar el instalador de forma directa en tu servidor sin necesidad de clonar el repositorio:
 
-Abre el archivo de configuración de Apache (usualmente `/etc/apache2/apache2.conf`):
 ```bash
-sudo nano /etc/apache2/apache2.conf
+curl -sSL https://raw.githubusercontent.com/bywarmx/apache-folders-first/main/install.sh | bash
 ```
 
-Busca el bloque de directivas para tu carpeta `/var/www/` y cambia `AllowOverride None` por `AllowOverride All`:
-```apache
-<Directory /var/www/>
-	Options Indexes FollowSymLinks
-	AllowOverride All
-	Require all granted
-</Directory>
-```
+---
 
-Guarda los cambios y recarga el servidor Apache:
-```bash
-sudo systemctl reload apache2
-```
+## Instalación manual (Clonando)
+
+Si prefieres clonar el repositorio y ejecutar el instalador localmente:
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/bywarmx/apache-folders-first.git
+   ```
+2. Accede al directorio:
+   ```bash
+   cd apache-folders-first
+   ```
+3. Otorga permisos de ejecución al instalador:
+   ```bash
+   chmod +x install.sh
+   ```
+4. Ejecuta el script:
+   ```bash
+   ./install.sh
+   ```
+
+---
 
 ## Créditos
 Creado por **Antigravity (Advanced Agentic Coding / Google DeepMind Team)**.
